@@ -289,17 +289,17 @@
   <style>
     /* ===== CSS Custom Properties ===== */
     :root {
-      --color-bg-dark: #0a0a0a;
-      --color-bg-section: #111111;
-      --color-bg-card: #1a1a1a;
-      --color-bg-card-hover: #222222;
-      --color-gold: #b22234;
-      --color-gold-light: #d43a4d;
-      --color-gold-dim: #8a1a28;
+      --color-bg-dark: #0c0c0c;
+      --color-bg-section: #141414;
+      --color-bg-card: #1e1e1e;
+      --color-bg-card-hover: #282828;
+      --color-gold: #c9a96e;
+      --color-gold-light: #e0c78f;
+      --color-gold-dim: #a08850;
       --color-cream: #f5efe6;
       --color-cream-soft: #d4c9b8;
-      --color-text: #e8e0d4;
-      --color-text-muted: #a89b8a;
+      --color-text: #ece4d8;
+      --color-text-muted: #b5a898;
       --color-accent: #b22234;
       --color-accent-soft: #c93545;
       --color-wine: #8a1a28;
@@ -393,9 +393,10 @@
       display: flex;
       align-items: center;
     }
-    .nav-logo-svg {
-      height: 52px;
+    .nav-logo-img {
+      height: 56px;
       width: auto;
+      object-fit: contain;
     }
     .nav-links {
       display: flex;
@@ -493,11 +494,12 @@
       margin-bottom: 32px;
       animation: fadeUp 1s ease-out 0.2s both;
     }
-    .hero-logo-svg {
-      width: min(90vw, 500px);
+    .hero-logo-img {
+      width: min(85vw, 420px);
       height: auto;
-      margin-bottom: 8px;
+      margin-bottom: 16px;
       animation: fadeUp 1s ease-out 0.4s both;
+      object-fit: contain;
     }
     .hero h1 {
       font-family: var(--font-display);
@@ -591,13 +593,13 @@
       text-decoration: none;
     }
     .btn-primary {
-      background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dim));
-      color: var(--color-bg-dark);
+      background: linear-gradient(135deg, #c93545, #8a1a28);
+      color: var(--color-cream);
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(201, 169, 110, 0.3);
-      color: var(--color-bg-dark);
+      box-shadow: 0 8px 30px rgba(178, 34, 52, 0.4);
+      color: var(--color-cream);
     }
     .btn-outline {
       background: transparent;
@@ -1312,7 +1314,8 @@
         --color-bg-card: #000;
         --color-text: #fff;
         --color-text-muted: #ddd;
-        --color-gold: #ff3347;
+        --color-gold: #ffd700;
+        --color-accent: #ff3347;
       }
     }
   </style>
@@ -1325,24 +1328,7 @@
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="The Venetian — Home">
-        <svg class="nav-logo-svg" viewBox="0 0 280 72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Venetian logo">
-          <defs>
-            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#c93545"/>
-              <stop offset="100%" style="stop-color:#8a1a28"/>
-            </linearGradient>
-          </defs>
-          <!-- Decorative line top -->
-          <line x1="40" y1="4" x2="240" y2="4" stroke="#b22234" stroke-width="0.8" opacity="0.5"/>
-          <!-- THE -->
-          <text x="140" y="22" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="9" font-weight="600" letter-spacing="8" fill="#b22234" opacity="0.8">THE</text>
-          <!-- VENETIAN -->
-          <text x="140" y="48" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="700" fill="url(#logoGrad)" letter-spacing="3">VENETIAN</text>
-          <!-- Decorative line -->
-          <line x1="50" y1="54" x2="230" y2="54" stroke="#b22234" stroke-width="0.6" opacity="0.4"/>
-          <!-- ITALIAN RESTAURANT -->
-          <text x="140" y="66" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="6.5" font-weight="500" letter-spacing="5" fill="#a89b8a">ITALIAN RESTAURANT</text>
-        </svg>
+        <img src="logo.png" alt="The Venetian Italian Restaurant" class="nav-logo-img">
       </a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -1369,43 +1355,8 @@
     <div class="hero-pattern" aria-hidden="true"></div>
     <div class="hero-content">
       <div class="hero-badge" aria-label="Serving Point Loma since 1965">Est. 1965 · Point Loma</div>
-      <!-- Hero Logo SVG -->
-      <svg class="hero-logo-svg" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Venetian Italian Restaurant">
-        <defs>
-          <linearGradient id="heroLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#d43a4d"/>
-            <stop offset="50%" style="stop-color:#b22234"/>
-            <stop offset="100%" style="stop-color:#8a1a28"/>
-          </linearGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-        <!-- Ornamental top line -->
-        <line x1="100" y1="15" x2="400" y2="15" stroke="#b22234" stroke-width="1" opacity="0.5"/>
-        <circle cx="100" cy="15" r="2" fill="#b22234" opacity="0.5"/>
-        <circle cx="400" cy="15" r="2" fill="#b22234" opacity="0.5"/>
-        <!-- THE -->
-        <text x="250" y="48" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="18" font-weight="600" letter-spacing="16" fill="#b22234" opacity="0.85">THE</text>
-        <!-- VENETIAN main title -->
-        <text x="250" y="110" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="68" font-weight="700" fill="url(#heroLogoGrad)" letter-spacing="6" filter="url(#glow)">VENETIAN</text>
-        <!-- Decorative divider -->
-        <line x1="120" y1="125" x2="210" y2="125" stroke="#b22234" stroke-width="0.8" opacity="0.5"/>
-        <circle cx="250" cy="125" r="3" fill="none" stroke="#b22234" stroke-width="1" opacity="0.6"/>
-        <line x1="290" y1="125" x2="380" y2="125" stroke="#b22234" stroke-width="0.8" opacity="0.5"/>
-        <!-- ITALIAN RESTAURANT -->
-        <text x="250" y="148" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="12" font-weight="500" letter-spacing="10" fill="#a89b8a">ITALIAN RESTAURANT</text>
-        <!-- POINT LOMA · SAN DIEGO -->
-        <text x="250" y="172" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="9" font-weight="400" letter-spacing="6" fill="#8a7044" opacity="0.7">POINT LOMA · SAN DIEGO</text>
-        <!-- Ornamental bottom line -->
-        <line x1="100" y1="188" x2="400" y2="188" stroke="#b22234" stroke-width="1" opacity="0.5"/>
-        <circle cx="100" cy="188" r="2" fill="#b22234" opacity="0.5"/>
-        <circle cx="400" cy="188" r="2" fill="#b22234" opacity="0.5"/>
-      </svg>
+      <!-- Hero Logo -->
+      <img src="logo.png" alt="The Venetian Italian Restaurant — Point Loma, San Diego, Est. 1965" class="hero-logo-img">
       <h1 class="sr-only">The Venetian</h1>
       <p class="hero-sub">Italian Restaurant &amp; Pizzeria</p>
       <p class="hero-desc">Three generations of the Giacalone family crafting authentic Italian cuisine in the heart of Point Loma, San Diego.</p>
